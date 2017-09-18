@@ -1,3 +1,5 @@
-This is a dice roller
-
-<dr-die></dr-die>
+<div class="dice-roller">
+	<dr-die
+		*ngFor="let die of dice"
+		[die]="die"></dr-die>
+</div>
