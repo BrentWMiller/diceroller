@@ -1,3 +1,11 @@
-<p>
-  die works!
-</p>
+<div class="die__counts">
+	<input
+		class="die__count"
+		type="radio"
+		*ngFor="let count of counts">
+</div>
+<div class="die__type">{{ die.type }}</div>
+<div class="die__buttons">
+	<button class="die__button">Roll</button>
+	<button class="die__button">Re-Roll</button>
+</div>
