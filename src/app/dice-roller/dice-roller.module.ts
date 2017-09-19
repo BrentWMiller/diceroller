@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DiceRollerComponent } from './dice-roller.component';
 import { DieComponent } from './die/die.component';
+import { DieCountComponent } from './die-count/die-count.component';
 
 @NgModule({
 	imports: [
@@ -10,7 +11,8 @@ import { DieComponent } from './die/die.component';
 	],
 	declarations: [
 		DiceRollerComponent,
-		DieComponent
+		DieComponent,
+		DieCountComponent
 	],
 	exports: [
 		DiceRollerComponent
