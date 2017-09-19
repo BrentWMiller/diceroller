@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Die } from '../models/die.interface';
 
 @Component({
@@ -6,18 +6,22 @@ import { Die } from '../models/die.interface';
 	templateUrl: './die.component.html',
 	styleUrls: ['./die.component.scss']
 })
-export class DieComponent implements OnInit {
-	@HostBinding('class') dieClass = 'die';
+export class DieComponent {
 
 	@Input()
 	die: Die[];
 
-	counts: number[];
+	@Output()
+	roll: EventEmitter<number> = new EventEmitter<number> ();
+
+	min: number = 1;
+	max: number;
 
 	constructor() { }
 
-	ngOnInit() {
-		this.counts = [1, 2, 3, 4, 5];
+	onRoll(value: number): void {
+		this.max = value;
+		this.roll.emit(Math.floor(Math.random() * (this.max - this.min + 1)) + this.min);
 	}
 
 }
