@@ -9,7 +9,7 @@ import { Die } from '../models/die.interface';
 export class DieComponent {
 
 	@Input()
-	die: Die[];
+	die: Die;
 
 	@Output()
 	roll: EventEmitter<number> = new EventEmitter<number> ();
