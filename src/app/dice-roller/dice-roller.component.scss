@@ -1,5 +1,25 @@
+:host {
+	position: relative;
+	display: block;
+	height: 100vh;
+}
+
 .dice-roller {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
+
+	&__roll-value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		font-size: 75px;
+		font-weight: 700;
+	}
+
+	&__bar {
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
 }

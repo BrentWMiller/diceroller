@@ -11,12 +11,17 @@ import { Die } from './models/die.interface';
 export class DiceRollerComponent implements OnInit {
 
 	dice: Die[];
+	roll: number;
 
 	constructor() {
 	}
 
 	ngOnInit() {
 		this.dice = dice;
+	}
+
+	handleRoll(event: number): void {
+		this.roll = event;
 	}
 
 }

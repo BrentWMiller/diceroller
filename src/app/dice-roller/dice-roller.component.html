@@ -1,5 +1,11 @@
 <div class="dice-roller">
-	<dr-die
-		*ngFor="let die of dice"
-		[die]="die"></dr-die>
+	<dr-die-count></dr-die-count>
+	<div
+		class="dice-roller__roll-value">{{ roll }}</div>
+	<div class="dice-roller__bar">
+		<dr-die
+			*ngFor="let die of dice"
+			[die]="die"
+			(roll)="handleRoll($event)"></dr-die>
+	</div>
 </div>
