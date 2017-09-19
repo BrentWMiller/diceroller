@@ -1,3 +1,4 @@
 export interface Die {
-	type: number;
+	name: string,
+	value: number
 }
