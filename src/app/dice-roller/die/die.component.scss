@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 .die {
 	display: flex;
 	justify-content: center;
@@ -7,22 +9,23 @@
 	height: 75px;
 	margin: 5px 5px 25px;
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 20px;
 	letter-spacing: 2px;
-	color: #fff;
-	background-color: #357CF5;
-	transition: background-color 0.25s;
+	font-weight: 700;
+	color: $color-text;
+	background-color: $color-primary;
+	border-radius: 2px;
+	transform: translate3d(0, 0, 0);
+	transition: background-color 0.25s, transform 0.5s;
 
 	&:hover {
 		cursor: pointer;
-		background-color: adjust-hue(#357CF5, 20deg);
+		background-color: $color-accent;
+		transform: translate3d(0, -10px, 0);
 	}
 
 	&--selected {
-		background-color: adjust-hue(#357CF5, 60deg);
-
-		&:hover {
-			background-color: adjust-hue(#357CF5, 40deg);
-		}
+		background-color: $color-accent;
+		transform: translate3d(0, -20px, 0);
 	}
 }
