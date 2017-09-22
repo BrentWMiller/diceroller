@@ -1,11 +1,12 @@
 <div class="dice-roller">
 	<dr-die-count></dr-die-count>
+	<pre>{{ selectedDice | json}}</pre>
 	<div
-		class="dice-roller__roll-value">{{ roll }}</div>
+		class="dice-roller__roll-value">{{ selectedDice }}</div>
 	<div class="dice-roller__bar">
 		<dr-die
 			*ngFor="let die of dice"
 			[die]="die"
-			(roll)="handleRoll($event)"></dr-die>
+			(select)="handleSelect($event)"></dr-die>
 	</div>
 </div>

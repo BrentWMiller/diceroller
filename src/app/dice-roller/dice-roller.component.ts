@@ -11,17 +11,34 @@ import { Die } from './models/die.interface';
 export class DiceRollerComponent implements OnInit {
 
 	dice: Die[];
-	roll: number;
+
+	selectedDie: number;
+	selectedDice: number[];
 
 	constructor() {
 	}
 
 	ngOnInit() {
 		this.dice = dice;
+		this.selectedDice = [];
 	}
 
-	handleRoll(event: number): void {
-		this.roll = event;
+	handleSelect(event: number): number[] {
+
+		if (this.selectedDice.includes(event)) {
+
+			//Remove die if it already exists.
+			this.selectedDice = this.selectedDice.filter((die: number) => {
+				return die !== event;
+			});
+
+		} else {
+
+			//Add die if it doesn't exist.
+			this.selectedDice = this.selectedDice.concat(event);
+			return this.selectedDice;
+
+		}
 	}
 
 }
