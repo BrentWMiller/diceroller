@@ -21,12 +21,15 @@ export class DiceRollerComponent implements OnInit {
 	diceRolls: number[];
 	totalRoll: number;
 
+	rollHistory: number[];
+
 	constructor() {
 	}
 
 	ngOnInit() {
 		this.dice = dice;
 		this.selectedDice = [];
+		this.rollHistory = [];
 	}
 
 	// Handles the selected dice
@@ -65,7 +68,17 @@ export class DiceRollerComponent implements OnInit {
 
 		this.totalRoll = this.diceRolls.reduce( (acc, cur) => acc + cur, 0);
 
+		// Push roll to history
+		this.addToHistory(this.totalRoll);
+
 		return this.totalRoll;
+	}
+
+	addToHistory(roll): number[] {
+		console.log(roll);
+		this.rollHistory = this.rollHistory.concat(roll);
+		console.log(this.rollHistory)
+		return this.rollHistory;
 	}
 
 }
