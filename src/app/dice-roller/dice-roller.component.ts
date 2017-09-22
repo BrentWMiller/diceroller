@@ -15,6 +15,12 @@ export class DiceRollerComponent implements OnInit {
 	selectedDie: number;
 	selectedDice: number[];
 
+	roll: number;
+	minRoll: number = 1;
+	maxRoll: number;
+	diceRolls: number[];
+	totalRoll: number;
+
 	constructor() {
 	}
 
@@ -23,6 +29,7 @@ export class DiceRollerComponent implements OnInit {
 		this.selectedDice = [];
 	}
 
+	// Handles the selected dice
 	handleSelect(event: number): number[] {
 
 		if (this.selectedDice.includes(event)) {
@@ -39,6 +46,26 @@ export class DiceRollerComponent implements OnInit {
 			return this.selectedDice;
 
 		}
+	}
+
+	// Rolls the selected dice and returns the sum of all rolls
+	rollDice(): number {
+		this.diceRolls = [];
+		
+		for (var i = 0; i < this.selectedDice.length; i++) {
+			// Set max roll
+			this.maxRoll = this.selectedDice[i];
+
+			// Calculate roll
+			this.roll = Math.floor(Math.random() * (this.maxRoll - this.minRoll + 1)) + this.minRoll;
+
+			// Add roll to dice rolls array
+			this.diceRolls = this.diceRolls.concat(this.roll);
+		}
+
+		this.totalRoll = this.diceRolls.reduce( (acc, cur) => acc + cur, 0);
+
+		return this.totalRoll;
 	}
 
 }
