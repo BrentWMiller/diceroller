@@ -1,6 +1,7 @@
 <div class="dice-roller">
 	<dr-die-count></dr-die-count>
 	<pre>{{ selectedDice | json}}</pre>
+	<pre>{{ rollHistory | json}}</pre>
 	<div
 		class="dice-roller__roll-value">{{ totalRoll }}</div>
 	<div class="dice-roller__bar">
@@ -10,6 +11,6 @@
 			(select)="handleSelect($event)"></dr-die>
 	</div>
 	<button
-		class="btn"
+		class="dice-roller__btn"
 		(click)="rollDice()">Roll dice</button>
 </div>
