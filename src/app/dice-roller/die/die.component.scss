@@ -17,4 +17,12 @@
 		cursor: pointer;
 		background-color: adjust-hue(#357CF5, 20deg);
 	}
+
+	&--selected {
+		background-color: adjust-hue(#357CF5, 60deg);
+
+		&:hover {
+			background-color: adjust-hue(#357CF5, 40deg);
+		}
+	}
 }

@@ -12,16 +12,16 @@ export class DieComponent {
 	die: Die;
 
 	@Output()
-	roll: EventEmitter<number> = new EventEmitter<number> ();
+	select: EventEmitter<number> = new EventEmitter<number> ();
 
-	min: number = 1;
-	max: number;
+	selected: boolean;
 
 	constructor() { }
 
-	onRoll(value: number): void {
-		this.max = value;
-		this.roll.emit(Math.floor(Math.random() * (this.max - this.min + 1)) + this.min);
+	selectDie(value: number): void {
+		this.selected = !this.selected;
+
+		this.select.emit(value);
 	}
 
 }

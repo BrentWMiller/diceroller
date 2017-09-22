@@ -1,3 +1,4 @@
 <div
 	class="die"
-	(click)="onRoll(die.value)">{{ die.name }}</div>
+	(click)="selectDie(die.value)"
+	[class.die--selected]="selected">{{ die.name }}</div>
