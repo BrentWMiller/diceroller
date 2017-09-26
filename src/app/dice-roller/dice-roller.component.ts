@@ -15,6 +15,8 @@ export class DiceRollerComponent implements OnInit {
 	selectedDie: number;
 	selectedDice: number[];
 
+	diceCount: number;
+
 	roll: number;
 	minRoll: number = 1;
 	maxRoll: number;
@@ -37,14 +39,14 @@ export class DiceRollerComponent implements OnInit {
 
 		if (this.selectedDice.includes(event)) {
 
-			//Remove die if it already exists.
+			// Remove die if it already exists.
 			this.selectedDice = this.selectedDice.filter((die: number) => {
 				return die !== event;
 			});
 
 		} else {
 
-			//Add die if it doesn't exist.
+			// Add die if it doesn't exist.
 			this.selectedDice = this.selectedDice.concat(event);
 			return this.selectedDice;
 
@@ -58,7 +60,7 @@ export class DiceRollerComponent implements OnInit {
 		for (var i = 0; i < this.selectedDice.length; i++) {
 			// Set max roll
 			this.maxRoll = this.selectedDice[i];
-
+				
 			// Calculate roll
 			this.roll = Math.floor(Math.random() * (this.maxRoll - this.minRoll + 1)) + this.minRoll;
 
@@ -75,9 +77,7 @@ export class DiceRollerComponent implements OnInit {
 	}
 
 	addToHistory(roll): number[] {
-		console.log(roll);
 		this.rollHistory = this.rollHistory.concat(roll);
-		console.log(this.rollHistory)
 		return this.rollHistory;
 	}
 
