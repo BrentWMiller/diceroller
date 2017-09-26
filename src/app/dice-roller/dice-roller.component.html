@@ -1,7 +1,6 @@
 <div class="dice-roller">
-	<dr-die-count></dr-die-count>
-	<pre>{{ selectedDice | json}}</pre>
-	<pre>{{ rollHistory | json}}</pre>
+	<dr-die-count
+		(count)="handleDiceCount($event)"></dr-die-count>
 	<div
 		class="dice-roller__roll-value">{{ totalRoll }}</div>
 	<div class="dice-roller__bar">
