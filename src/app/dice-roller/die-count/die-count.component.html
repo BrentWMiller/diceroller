@@ -1,6 +1,8 @@
 <label>Choose the number of dice to roll.</label>
 <input
 	type="number"
+	min="1"
+	max="99"
 	[value]="amount"
 	(input)="onAmountChange(count.value)"
 	#count>

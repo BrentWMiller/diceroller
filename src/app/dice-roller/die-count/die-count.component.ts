@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'dr-die-count',
@@ -19,12 +19,13 @@ export class DieCountComponent implements OnInit {
 	}
 
 	onAmountChange(value: number): void {
-		if (this.value === 0 || this.value === null) {
+		if (value > 0 && value <= 99) {
+			this.value = value;
+			this.count.emit(this.value);
+		} else {
 			this.value = 1;
+			this.count.emit(this.value);
 		}
-		
-		this.value = value;
-		this.count.emit(this.value);
 	}
 
 }
