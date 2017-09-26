@@ -1,2 +1,6 @@
-<!-- <label>Choose the number of dice to roll.</label>
-<input type="number"> -->
+<label>Choose the number of dice to roll.</label>
+<input
+	type="number"
+	[value]="amount"
+	(input)="onAmountChange(count.value)"
+	#count>
