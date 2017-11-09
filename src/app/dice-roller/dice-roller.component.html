@@ -1,9 +1,5 @@
 <div class="dice-roller">
 
-	<dr-die-count (count)="handleDiceCount($event)"></dr-die-count>
-
-	<div class="dice-roller__roll-value">{{ totalRoll }}</div>
-
 	<div class="dice-roller__bar">
 		<dr-die
 			*ngFor="let die of dice"
@@ -11,8 +7,13 @@
 			(select)="handleSelect($event)"></dr-die>
 	</div>
 
-	<button
-		class="dice-roller__btn"
-		(click)="rollDice()">Roll dice</button>
+	<div>
+		<dr-die-count (count)="handleDiceCount($event)"></dr-die-count>
+
+		<div class="dice-roller__roll-value">{{ totalRoll }}</div>
+	</div>
 		
 </div>
+<button
+	class="dice-roller__btn"
+	(click)="rollDice()">Roll dice</button>
