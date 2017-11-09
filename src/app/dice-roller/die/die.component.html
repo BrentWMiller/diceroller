@@ -1,4 +1,13 @@
 <div
 	class="die"
 	(click)="selectDie(die.value)"
-	[class.die--selected]="selected">{{ die.name }}</div>
+	[class.die--selected]="selected">
+		<div>
+			<div class="die__name">{{ die.name }}</div>
+		</div>
+		<div class="die__status">
+			<!-- @TODO: Add modifier & die count -->
+			<span>modifier</span>
+			<span>count</span>
+		</div>
+	</div>

@@ -2,30 +2,45 @@
 
 .die {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	flex-wrap: wrap;
-	width: 75px;
+	width: 200px;
 	height: 75px;
-	margin: 5px 5px 25px;
-	font-weight: 300;
-	font-size: 20px;
-	letter-spacing: 2px;
-	font-weight: 700;
+	padding-left: 15px;
 	color: $color-text;
-	background-color: $color-primary;
-	border-radius: 2px;
-	transform: translate3d(0, 0, 0);
-	transition: background-color 0.25s, transform 0.5s;
+	background-color: $color-bg;
+	transition: background-color 0.25s;
+
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: '';
+		width: 3px;
+		height: 100%;
+		transition: background-color 0.25s;
+	}
 
 	&:hover {
 		cursor: pointer;
-		background-color: $color-accent;
-		transform: translate3d(0, -10px, 0);
+		background-color: $color-bg-light;
+	}
+
+	&__name {
+		display: block;
+	}
+
+	&__status {
+		display: flex;
+		flex-direction: column;
 	}
 
 	&--selected {
-		background-color: $color-accent;
-		transform: translate3d(0, -20px, 0);
+		position: relative;
+		background-color: $color-bg-light;
+
+		&:before {
+			background-color: $color-primary;
+		}
 	}
 }
